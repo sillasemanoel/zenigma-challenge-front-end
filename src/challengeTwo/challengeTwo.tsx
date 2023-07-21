@@ -44,8 +44,8 @@ export default function ChallengeTwo() {
       <h1>Desafio 2: Gerenciamento de Estado</h1>
       <div>
         <input type="number" id="input-value" />
-        <button onClick={handleAdd}>Add</button>
-        <button onClick={handleSubtract}>Subtract</button>
+        <button onClick={handleAdd}>Adicionar</button>
+        <button onClick={handleSubtract}>Subtrair</button>
       </div>
       <div data-testid="results">Result: {state.count}</div>
     </div>
