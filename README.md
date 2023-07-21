@@ -35,7 +35,7 @@ O desafio 2 está disponível na pasta `challengeTwo` dentro da pasta `src`. Est
 
 1. Clone o repositório
 ```bash
-git clone
+git clone https://github.com/sillasemanoel/zenigma-challenge-front-end.git
 ```
 
 2. Instalar as dependencias
