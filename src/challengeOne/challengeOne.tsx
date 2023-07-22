@@ -50,7 +50,7 @@ function CardList({ size }: CardListProps) {
 export default function ChallengeOne() {
   return (
     <div className='challengeOne'>
-      <h1>Desafio Um: Card List</h1>
+      <h1>Desafio 1: Card List</h1>
       <CardList size={10} />
     </div>
   )
