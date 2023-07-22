@@ -51,7 +51,7 @@ export default function ChallengeOne() {
   return (
     <div className='challengeOne'>
       <h1>Desafio Um: Card List</h1>
-      <CardList size={8} />
+      <CardList size={10} />
     </div>
   )
 }
