@@ -24,42 +24,27 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-// Componente ChallengeTwo - Gerencia o estado usando useReducer
-export default function ChallengeTwo() {
+// Componente ChallengeApp - Gerencia o estado usando useReducer
+export default function ChallengeApp() {
   // Utilizando o hook useReducer para gerenciar o estado com o reducer definido
   const [state, dispatch] = useReducer(reducer, { count: 0 });
 
-  // Função para lidar com o clique no botão "Add"
-  const handleAdd = () => {
-    const value = parseInt((document.getElementById('input-value') as HTMLInputElement).value);
-    // Verifica se o valor do input é um número válido, caso não seja, adiciona 1 ao estado
-    if (isNaN(value)) {
-      dispatch({ type: 'ADD', payload: 1 });
-    } else {
-      // Caso seja um número válido, adiciona o valor do input ao estado
-      dispatch({ type: 'ADD', payload: value });
-    }
-  };
+  // Função para lidar com o clique no botão "Add" ou "Subtract"
+  const handleButtonClick = (actionType: 'ADD' | 'SUBTRACT', value: number) => {
+    // Verifica se o valor do input é um número válido, caso não seja, usa o valor padrão de 1
+    const validValue = isNaN(value) ? 1 : value;
 
-  // Função para lidar com o clique no botão "Subtract"
-  const handleSubtract = () => {
-    const value = parseInt((document.getElementById('input-value') as HTMLInputElement).value);
-    // Verifica se o valor do input é um número válido, caso não seja, subtrai 1 do estado
-    if (isNaN(value)) {
-      dispatch({ type: 'SUBTRACT', payload: 1 });
-    } else {
-      // Caso seja um número válido, subtrai o valor do input do estado
-      dispatch({ type: 'SUBTRACT', payload: value });
-    }
+    // Executa a ação correspondente com o valor do input
+    dispatch({ type: actionType, payload: validValue });
   };
 
   return (
     <div className="challengeTwo">
-      <h1>Desafio 2: Gerenciamento de Estado</h1>
+      <h1>Aplicativo Desafio</h1>
       <div>
         <input type="number" id="input-value" />
-        <button onClick={handleAdd}>Adicionar</button>
-        <button onClick={handleSubtract}>Subtrair</button>
+        <button onClick={() => handleButtonClick('ADD', parseInt((document.getElementById('input-value') as HTMLInputElement).value))}>Adicionar</button>
+        <button onClick={() => handleButtonClick('SUBTRACT', parseInt((document.getElementById('input-value') as HTMLInputElement).value))}>Subtrair</button>
       </div>
       <div data-testid="results">Result: {state.count}</div>
     </div>
