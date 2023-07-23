@@ -40,7 +40,7 @@ export default function ChallengeApp() {
 
   return (
     <div className="challengeTwo">
-      <h1>Aplicativo Desafio</h1>
+      <h1>Desafio 2: Gerenciamento de Estado</h1>
       <div>
         <input type="number" id="input-value" />
         <button onClick={() => handleButtonClick('ADD', parseInt((document.getElementById('input-value') as HTMLInputElement).value))}>Adicionar</button>
